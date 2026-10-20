@@ -1,0 +1,13 @@
+{
+  "name": "session-info",
+  "description": "Session Info sidebar for Claude Code",
+  "owner": {
+    "name": "Byron Juarez"
+  },
+  "plugins": [
+    {
+      "name": "session-info",
+      "source": "./"
+    }
+  ]
+}
