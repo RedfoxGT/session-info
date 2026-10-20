@@ -10,6 +10,8 @@ Una barra lateral para Claude Code que muestra en vivo:
 - la versión y el modelo
 - Clawd, la mascota de Claude Code, caminando al fondo
 
+![Screenshot de mi proyecto](images/screenshot.png)
+
 Se abre sola en terminales anchas; si no, escribe `/session-info`.
 
 ## Instalación

@@ -10,6 +10,8 @@ A Claude Code sidebar that shows, live:
 - version and model
 - Clawd, the Claude Code mascot, walking along the bottom
 
+![Screenshot of the Session Info sidebar](images/screenshot.png)
+
 Opens by itself on wide terminals; otherwise run `/session-info`.
 
 ## Install
