@@ -16,7 +16,8 @@ export function listPlugins(installed: string[], enabled: Record<string, unknown
 
 // same look as /usage: full blocks plus a half block, padded to the width
 export function bar(percent: number, width = BAR) {
-  const halves = Math.round((Math.min(100, Math.max(0, percent)) / 100) * width * 2)
+  // at least half a block once anything is used, so 1% doesn't read as empty
+  const halves = Math.max(percent > 0 ? 1 : 0, Math.round((Math.min(100, Math.max(0, percent)) / 100) * width * 2))
   const s = '█'.repeat(Math.floor(halves / 2)) + (halves % 2 ? '▌' : '')
   return s.padEnd(width, ' ')
 }
@@ -83,7 +84,7 @@ export function contextGrid(categories: Category[], window: number): Cell[][] {
 const CLAWD = [' ▐▛███▜▌ ', '▝▜█████▛▘']
 const LEGS = ['  ▘▘ ▝▝  ', '  ▝▘ ▘▝  ']
 const ORANGE = 0xd97757
-const FLOOR = 0x555555
+const FLOOR = 0x888888
 const BLACK = 0x000000
 const WALK = 4 // rows: 3 of Clawd, 1 of floor
 let walkColumns = 0
@@ -153,7 +154,7 @@ export const register: Register = on => {
     ])
 
     return (
-      <Box flexDirection="column" backgroundColor="#000000" minHeight={e.props.scroll.bodyRows}>
+      <Box flexDirection="column" backgroundColor="#000000" minHeight={e.props.scroll.bodyRows - 1}>
         <Text bold color="#FCEE0A">SESSION INFO</Text>
         <Text color="#FCEE0A">{'━'.repeat(e.props.bodyColumns)}</Text>
         <Text bold>{list.filter(p => p.isOn).length}/{list.length} plugins activos</Text>

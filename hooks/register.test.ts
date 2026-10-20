@@ -11,6 +11,7 @@ test('bar fills by halves and keeps its width', () => {
   expect(bar(0, 10)).toBe('          ')
   expect(bar(50, 10)).toBe('█████     ')
   expect(bar(5, 10)).toBe('▌         ')
+  expect(bar(1, 10)).toBe('▌         ')
   expect(bar(150, 10)).toBe('██████████')
 })
 
