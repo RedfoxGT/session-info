@@ -1,5 +1,7 @@
 # session-info
 
+[Español](README.es.md)
+
 A Claude Code sidebar that shows, live:
 
 - your installed plugins and which are enabled
